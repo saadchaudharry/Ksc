@@ -1,26 +1,35 @@
-from django.shortcuts import render,get_object_or_404
-from django.views.generic import ListView
-from .models import Catagory,Prod
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404,reverse
+from django.urls import reverse_lazy
+from django.views.generic import ListView,TemplateView,CreateView
+from django.views.generic.edit import FormView
+from .models import Catagory,Prod,Contactus
+from .form import Contactusform
 
 # Create your views here.
 
-def prod(request):
-    return render(request,'index.html')
-
 class catagory(ListView):
-    model =Catagory
+    model = Catagory
     template_name = 'index.html'
 
-class Product(ListView):
-    queryset = Prod.objects.filter(catagory__slug='hex_bolt')
-    template_name = 'product.html'
+class aboutus(TemplateView):
+    template_name = 'about.html'
 
-def list_of_catagory(request,catagory_slug):
-    catagories=Catagory.objects.all()
-    post=Prod.objects.filter(status='publish')
+class contactus(CreateView):
+    form_class = Contactusform
+    model=Contactus
+    template_name = 'contactus.html'
+    success_url = reverse_lazy('contactus')
+
+# def contact(request):
+#     form=Contactusform
+#
+#     return render(request,'contactus.html',context)
+
+def list_of_catagory(request, catagory_slug):
+    catagories = Catagory.objects.all()
+    post = Prod.objects.filter(status='publish')
     if catagory_slug:
-        catagory=get_object_or_404(Catagory,slug=catagory_slug)
-        post=post.filter(catagory=catagory)
-    context={'catagories':catagories,'post':post,'catagory':catagory}
-    return render(request,'home.html',context)
+        catagory = get_object_or_404(Catagory, slug=catagory_slug)
+        post = post.filter(catagory=catagory)
+    context = {'catagories': catagories, 'post': post, 'catagory': catagory}
+    return render(request, 'home.html', context)

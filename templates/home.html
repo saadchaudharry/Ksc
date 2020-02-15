@@ -15,9 +15,9 @@
         <div class="col-8 col-md-6  flex-column position-static p-2">
 {#          <strong class="d-inline-block mb-2 fgrn"></strong>#}
           <h4 class="mb-0">{{ i.name }}</h4>
-          <div class="mb-1 text-muted">price:$250</div>
-          <p class="card-text mb-auto">This is a wider card with supporting text below as .</p>
-          <button type="button" class="btn btn-primary btn-sm">Call us </button>
+          <div class="mb-1 text-muted">price:${{ i.price }}</div>
+          <p class="card-text mb-auto">{{ i.description|slice:":50" }}.</p>
+          <a href="tel:82866 45300" type="button" class="btn btn-primary btn-sm">Call us </a>
           <button type="button" class="btn btn-secondary btn-sm">Contact us.</button>
         </div>
 </div>

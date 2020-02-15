@@ -17,13 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from products.views import prod,catagory,Product,list_of_catagory
+from products.views import catagory,list_of_catagory,aboutus,contactus
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',catagory.as_view(),name='home'),
-    # path('/<slug:>',Product.as_view(),name='home'),
-    path('p/<catagory_slug>',list_of_catagory,name='caa')
+    path('p/<catagory_slug>',list_of_catagory,name='caa'),
+    path('aboutus/',aboutus.as_view(),name='about'),
+    path('contactUs/',contactus.as_view(),name='contactus'),
 ]
 
 if settings.DEBUG:
