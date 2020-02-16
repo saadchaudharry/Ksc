@@ -9,6 +9,7 @@ from .form import Contactusform
 
 class catagory(ListView):
     model = Catagory
+    paginate_by = 6
     template_name = 'index.html'
 
 class aboutus(TemplateView):
@@ -19,11 +20,6 @@ class contactus(CreateView):
     model=Contactus
     template_name = 'contactus.html'
     success_url = reverse_lazy('contactus')
-
-# def contact(request):
-#     form=Contactusform
-#
-#     return render(request,'contactus.html',context)
 
 def list_of_catagory(request, catagory_slug):
     catagories = Catagory.objects.all()
