@@ -9,7 +9,7 @@ from .form import Contactusform
 
 class catagory(ListView):
     model = Catagory
-    paginate_by = 6
+    paginate_by = 8
     template_name = 'index.html'
 
 class aboutus(TemplateView):

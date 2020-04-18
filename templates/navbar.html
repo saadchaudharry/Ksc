@@ -1,21 +1,24 @@
 <!-- nav bar -->
-<nav class="navbar navbar-expand-lg underll navbar-light bg-white py-0 sticky-top" style="color: #8db619">
-  <a class="navbar-brand" href="{% url 'home' %}" style="color: #8db619">Kscforging</a>
-  <button class="navbar-toggler p-0 border-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light  py-0  sticky-top" style="color: #8db619;background:#402125;">
+    <div class="container">
+  <a class="navbar-brand text-white" href="{% url 'home' %}">Kscforging</a>
+  <button class="navbar-toggler p-0 bg-danger rounded-1 " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
+    <!--<img src="/static/bars-solid.svg" >-->
   </button>
-
+<!--<hhfb161d></hh>-->
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item naav">
-        <a class="nav-link" href="{% url 'home' %}">Home.</a>
+        <a class="nav-link" style="color:white " href="{% url 'home' %}">Home</a>
       </li>
       <li class="nav-item naav">
-        <a class="nav-link" href="{% url 'about' %}">About us.</a>
+        <a class="nav-link" style="color:white " href="{% url 'about' %}">About us</a>
       </li>
       <li class="nav-item naav">
-        <a class="nav-link" href="{% url 'contactus' %}">Contact us.</a>
+        <a class="nav-link" style="color:white " href="{% url 'contactus' %}">Contact us</a>
       </li>
     </ul>
+  </div>
   </div>
 </nav>
