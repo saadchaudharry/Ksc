@@ -25,7 +25,7 @@ SECRET_KEY = 'k&n+_3!8xybkz06p#z5(uk8eux2m=5t^lai6$6qw4z60lq8_3q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.kscforging.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -58,7 +58,7 @@ ROOT_URLCONF = 'Ksc.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/kscforging/Ksc/templates'],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
